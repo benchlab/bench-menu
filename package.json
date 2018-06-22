@@ -1,6 +1,6 @@
 {
   "name": "bench-menu",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Module for Bench's navigation across all Bench-based websites.",
   "main": "index.js",
   "scripts": {

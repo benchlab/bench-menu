@@ -15,7 +15,7 @@ $navigaiton-height: 1.875rem;
     }
   }
 
-  .global-nav {
+  .benchmenu {
     background-color: $global-background;
     box-shadow: 0 2px 2px transparentize($global-black, .8);
     display: block;
@@ -116,7 +116,7 @@ $navigaiton-height: 1.875rem;
         &.is-revealed {
           display: block;
 
-          .global-nav__more {
+          .benchmenu__more {
             display: block;
             margin-top: 0;
             padding-left: 0;
@@ -157,7 +157,7 @@ $navigaiton-height: 1.875rem;
       }
 
       &--more {
-        @extend .global-nav__list-item;
+        @extend .benchmenu__list-item;
         border-left: 1px solid $global-transparent;
         border-right: 1px solid $global-transparent;
         min-width: 3.75rem;
@@ -168,7 +168,7 @@ $navigaiton-height: 1.875rem;
           top: -1px;
           width: 100%;
 
-          & > .global-nav__link {
+          & > .benchmenu__link {
             display: none !important;
           }
         }
@@ -181,19 +181,19 @@ $navigaiton-height: 1.875rem;
         }
 
         &.is-revealed {
-          .global-nav__more {
+          .benchmenu__more {
             display: block;
             margin: 0;
             padding-left: 0;
           }
 
-          .global-nav__more .global-nav__link:hover {
+          .benchmenu__more .benchmenu__link:hover {
             color: $global-orange;
             text-decoration: none;
           }
 
-          > .global-nav__link,
-          .global-nav__more-chevron {
+          > .benchmenu__link,
+          .benchmenu__more-chevron {
             color: $global-orange;
             opacity: 1;
           }
@@ -201,7 +201,7 @@ $navigaiton-height: 1.875rem;
       }
 
       @media only screen and (min-width: $global-breakpoint-large) {
-        &:first-of-type .global-nav__link {
+        &:first-of-type .benchmenu__link {
           margin-left: 0;
         }
       }
@@ -225,12 +225,12 @@ $navigaiton-height: 1.875rem;
         width: 100%;
       }
 
-      .global-nav__link {
+      .benchmenu__link {
         border-top: 0;
         float: none;
       }
 
-      .global-nav__list-item {
+      .benchmenu__list-item {
         float: none;
 
         @media only screen and (max-width: $global-breakpoint-medium) {
@@ -259,9 +259,9 @@ $navigaiton-height: 1.875rem;
         }
       }
 
-      .global-nav__list-item:first-of-type {
+      .benchmenu__list-item:first-of-type {
         @media only screen and (min-width: $global-breakpoint-medium) {
-          .global-nav__link {
+          .benchmenu__link {
             margin-left: .625rem;
           }
         }

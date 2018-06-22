@@ -63,16 +63,16 @@ bench.globalNav = function() {
       let siteLink = document.createElement('a');
 
       siteLink.href = site.url;
-      siteLink.classList.add('global-nav__link');
+      siteLink.classList.add('benchmenu__link');
       siteLink.innerText = site.title;
 
       if (document.URL.startsWith(site.url)) {
         siteLink.classList.add('is-active');
       }
 
-      siteItem.classList.add('global-nav__list-item');
+      siteItem.classList.add('benchmenu__list-item');
       if (last) {
-        siteItem.id = 'global-nav-menu';
+        siteItem.id = 'bench-menu';
       }
       siteItem.appendChild(siteLink);
       return siteItem;
@@ -80,12 +80,12 @@ bench.globalNav = function() {
 
     createNav: function() {
       let wrapper = createFromHTML(
-        '<nav class="global-nav">' +
-        '  <div class="global-nav__wrapper">' +
-        '    <button class="global-nav__title" aria-expanded="false" aria-controls="global-navigation">' +
+        '<nav class="benchmenu">' +
+        '  <div class="benchmenu__wrapper">' +
+        '    <button class="benchmenu__title" aria-expanded="false" aria-controls="benchnavigation">' +
         '      Ubuntu websites' +
         '    </button>' +
-        '    <ul class="global-nav__list" id="global-navigation" aria-hidden="true">' +
+        '    <ul class="benchmenu__list" id="benchnavigation" aria-hidden="true">' +
         '      ' +
         '    </ul>' +
         '  </div>' +
@@ -106,11 +106,11 @@ bench.globalNav = function() {
       // Add "more" sites
       if (this.more.length > 0) {
         let moreItem = createFromHTML(
-          '<li class="global-nav__list-item--more">' +
-          '  <a class="global-nav__link" href="#">' +
-          '    More <span class="global-nav__more-chevron">&rsaquo;</span>' +
+          '<li class="benchmenu__list-item--more">' +
+          '  <a class="benchmenu__link" href="#">' +
+          '    More <span class="benchmenu__more-chevron">&rsaquo;</span>' +
           '  </a>' +
-          '  <ul class="global-nav__more"></ul>' +
+          '  <ul class="benchmenu__more"></ul>' +
           '</li>'
         );
         let moreList = moreItem.querySelector('ul');
@@ -139,8 +139,8 @@ bench.globalNav = function() {
         document.body.firstElementChild
       );
 
-      let moreList = globalNav.querySelector('.global-nav__list-item--more');
-      let moreToggle = globalNav.querySelector('.global-nav__list-item--more > .global-nav__link');
+      let moreList = globalNav.querySelector('.benchmenu__list-item--more');
+      let moreToggle = globalNav.querySelector('.benchmenu__list-item--more > .benchmenu__link');
 
       if (moreList) {
         /* Open and close the menu on click of heading */
@@ -169,8 +169,8 @@ bench.globalNav = function() {
         );
       }
 
-      let smallScreenToggle = globalNav.querySelector('.global-nav__title');
-      let navList = globalNav.querySelector('.global-nav__list');
+      let smallScreenToggle = globalNav.querySelector('.benchmenu__title');
+      let navList = globalNav.querySelector('.benchmenu__list');
       if (smallScreenToggle && navList) {
         smallScreenToggle.addEventListener(
           'click',
@@ -182,9 +182,9 @@ bench.globalNav = function() {
               smallScreenToggle.setAttribute('aria-expanded', !expand);
               navList.setAttribute('aria-hidden', expand);
               if (expand) {
-                window.location.hash = 'global-nav';
+                window.location.hash = 'benchmenu';
               } else {
-                window.location.hash = 'global-nav-menu';
+                window.location.hash = 'bench-menu';
               }
             };
           }(smallScreenToggle)
