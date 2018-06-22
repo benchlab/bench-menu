@@ -4,7 +4,7 @@ $navigaiton-height: 1.875rem;
   $navigaiton-height: 2.5rem;
 }
 
-@mixin global-p-nav {
+@mixin bench-p-menu {
   body {
     padding-top: $navigaiton-height;
     position: relative;
@@ -68,7 +68,7 @@ $navigaiton-height: 1.875rem;
         cursor: pointer;
         color: $global-dark-grey;
         display: block;
-        font-family: Ubuntu, Arial, 'libra sans', sans-serif;
+        font-family: Montserrat Alternates, Arial, 'libra sans', sans-serif;
         font-size: .8125rem;
         font-weight: 300;
         line-height: 1.5;

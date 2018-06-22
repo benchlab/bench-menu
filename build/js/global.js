@@ -7,11 +7,11 @@ if (typeof bench === 'undefined') {
   var bench = {};
 }
 
-if (bench.hasOwnProperty('globalNav')) {
+if (bench.hasOwnProperty('benchMenu')) {
   throw TypeError("Namespace 'bench' not available");
 }
 
-bench.globalNav = function () {
+bench.benchMenu = function () {
   // Helpers & polyfills
   var createFromHTML = function createFromHTML(html) {
     var div = document.createElement('div');
@@ -32,12 +32,12 @@ bench.globalNav = function () {
     more: [{ url: "http://benchx.io/support", title: "Support" }, { url: "http://open.benchx.io", title: "Downloads" }, { url: "http://wallet.benchcore.io", title: "BenchWallet" }, { url: "http://shop.benchx.io", title: "Shop" }, { url: "http://foundation.benchx.io", title: "Foundation" }, { url: "http://distributedwebs.org", title: "DW Project" }],
 
     setup: function setup() {
-      var globalNav = this.createNav();
+      var benchMenu = this.createNav();
 
-      this.addNav(globalNav);
-      this.trackClicks(globalNav);
+      this.addNav(benchMenu);
+      this.trackClicks(benchMenu);
 
-      return globalNav;
+      return benchMenu;
     },
 
     createItem: function createItem(site) {
@@ -95,11 +95,11 @@ bench.globalNav = function () {
       return wrapper;
     },
 
-    addNav: function addNav(globalNav) {
-      document.body.insertBefore(globalNav, document.body.firstElementChild);
+    addNav: function addNav(benchMenu) {
+      document.body.insertBefore(benchMenu, document.body.firstElementChild);
 
-      var moreList = globalNav.querySelector('.benchmenu__list-item--more');
-      var moreToggle = globalNav.querySelector('.benchmenu__list-item--more > .benchmenu__link');
+      var moreList = benchMenu.querySelector('.benchmenu__list-item--more');
+      var moreToggle = benchMenu.querySelector('.benchmenu__list-item--more > .benchmenu__link');
 
       if (moreList) {
         /* Open and close the menu on click of heading */
@@ -118,8 +118,8 @@ bench.globalNav = function () {
         }(moreList));
       }
 
-      var smallScreenToggle = globalNav.querySelector('.benchmenu__title');
-      var navList = globalNav.querySelector('.benchmenu__list');
+      var smallScreenToggle = benchMenu.querySelector('.benchmenu__title');
+      var navList = benchMenu.querySelector('.benchmenu__list');
       if (smallScreenToggle && navList) {
         smallScreenToggle.addEventListener('click', function (smallScreenToggle) {
           return function (clickEvent) {

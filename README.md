@@ -15,7 +15,7 @@ bower install bench-menu --save
 ```html
 <link rel="stylesheet" type="text/css" media="screen" href="/bower-components/bench-menu/build/css/cookie-policy.css" />
 <script src="/bower-components/bench-menu/build/js/global.js"></script>
-<script>bench.globalNav.setup();</script>
+<script>bench.benchMenu.setup();</script>
 ```
 
 The Bench menu component should now appear across the top of the website.

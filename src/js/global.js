@@ -5,11 +5,11 @@ if (typeof bench === 'undefined') {
   var bench = {};
 }
 
-if (bench.hasOwnProperty('globalNav')) {
+if (bench.hasOwnProperty('benchMenu')) {
   throw TypeError("Namespace 'bench' not available");
 }
 
-bench.globalNav = function() {
+bench.benchMenu = function() {
   // Helpers & polyfills
   const createFromHTML = function(html) {
     let div = document.createElement('div');
@@ -50,12 +50,12 @@ bench.globalNav = function() {
     ],
 
     setup: function () {
-      let globalNav = this.createNav();
+      let benchMenu = this.createNav();
 
-      this.addNav(globalNav);
-      this.trackClicks(globalNav);
+      this.addNav(benchMenu);
+      this.trackClicks(benchMenu);
 
-      return globalNav;
+      return benchMenu;
     },
 
     createItem: function (site, last = false) {
@@ -133,14 +133,14 @@ bench.globalNav = function() {
       return wrapper;
     },
 
-    addNav: function(globalNav) {
+    addNav: function(benchMenu) {
       document.body.insertBefore(
-        globalNav,
+        benchMenu,
         document.body.firstElementChild
       );
 
-      let moreList = globalNav.querySelector('.benchmenu__list-item--more');
-      let moreToggle = globalNav.querySelector('.benchmenu__list-item--more > .benchmenu__link');
+      let moreList = benchMenu.querySelector('.benchmenu__list-item--more');
+      let moreToggle = benchMenu.querySelector('.benchmenu__list-item--more > .benchmenu__link');
 
       if (moreList) {
         /* Open and close the menu on click of heading */
@@ -169,8 +169,8 @@ bench.globalNav = function() {
         );
       }
 
-      let smallScreenToggle = globalNav.querySelector('.benchmenu__title');
-      let navList = globalNav.querySelector('.benchmenu__list');
+      let smallScreenToggle = benchMenu.querySelector('.benchmenu__title');
+      let navList = benchMenu.querySelector('.benchmenu__list');
       if (smallScreenToggle && navList) {
         smallScreenToggle.addEventListener(
           'click',
