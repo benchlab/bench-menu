@@ -1,0 +1,18 @@
+{
+  "name": "bench-menu",
+  "description": "Module for Bench's navigation across all Bench-based websites.",
+  "main": "src/js/global.js",
+  "authors": [
+    "Bench Computer, Inc."
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/benchlab/bench-menu",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
